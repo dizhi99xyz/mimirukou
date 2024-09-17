@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="秘密入口导航地址发布页官网丨秘密入口导航页面 - 专注于简约、现代的布局和功能">
+    <meta name="keywords" content="秘密入口导航地址发布页丨导航页面, 简约布局, 图片轮播, 联系方式">
+    <title>秘密入口导航页面</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f4f4;
+            transition: background-color 0.3s ease;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .announcement {
+            background: #e74c3c;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-height: 500px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .carousel img {
+            width: 100%;
+            height: auto;
+            transition: opacity 1s ease;
+        }
+        .carousel-images {
+            display: flex;
+            transition: transform 1s ease;
+        }
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+            transform: translateY(-50%);
+        }
+        .carousel-button.left {
+            left: 10px;
+        }
+        .carousel-button.right {
+            right: 10px;
+        }
+        .contact-info, .url-info {
+            margin-bottom: 20px;
+        }
+        .contact-info h2, .url-info h2 {
+            margin-top: 0;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .mouse-animation {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+            pointer-events: none;
+            transition: transform 0.2s ease;
+        }
+        .mouse-animation:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>秘密入口导航页面</h1>
+    </header>
+
+    <div class="container">
+        <div class="announcement">
+            <p>欢迎访问我们的网站！我们提供最新的资讯和资源。</p>
+        </div>
+		<center><div class="url-info">
+            <h2>相关网址</h2>
+            <p><a href="https://最新.bumilu.cyou/《蜘蛛侠》" target="_blank">访问我们的官网</a></p>
+			<p><a href="https://最新.bumilu.cyou/《蜘蛛侠》" target="_blank">访问最新的官网</a></p>
+			<p><a href="https://最新.bumilu.cyou/《蜘蛛侠》" target="_blank">访问备用的官网</a></p>
+			<p><a href="https://google.com" target="_blank">谷歌</a></p>
+			<p><a href="https://github.com" target="_blank">github</a></p>
+        </div></center>
+
+        <div class="carousel">
+            <div class="carousel-images">
+                <img src="https://dizhi77.xyz/tp/lb.webp" alt="图片1">
+                <img src="https://dizhi77.xyz/tp/lb.webp" alt="图片2">
+                <img src="https://dizhi77.xyz/tp/lb.webp" alt="图片3">
+            </div>
+            <button class="carousel-button left">&lt;</button>
+            <button class="carousel-button right">&gt;</button>
+        </div>
+
+        <div class="contact-info">
+            <h2>联系方式</h2>
+           
+            <p>邮箱: doufuru666@gmail.com</p>
+        </div>
+
+        
+    </div>
+
+    <footer>
+        <p>&copy; 2024 秘密入口导航页面. 保留所有权利.</p>
+    </footer>
+
+    <div class="mouse-animation"></div>
+
+    <script>
+        // 图片轮播功能
+        let index = 0;
+        const images = document.querySelectorAll('.carousel-images img');
+        const totalImages = images.length;
+        const leftButton = document.querySelector('.carousel-button.left');
+        const rightButton = document.querySelector('.carousel-button.right');
+
+        function updateCarousel() {
+            const offset = -index * 100;
+            document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`;
+        }
+
+        leftButton.addEventListener('click', () => {
+            index = (index > 0) ? index - 1 : totalImages - 1;
+            updateCarousel();
+        });
+
+        rightButton.addEventListener('click', () => {
+            index = (index < totalImages - 1) ? index + 1 : 0;
+            updateCarousel();
+        });
+
+        // 鼠标动画
+        document.addEventListener('mousemove', (e) => {
+            const mouse = document.querySelector('.mouse-animation');
+            mouse.style.left = `${e.pageX}px`;
+            mouse.style.top = `${e.pageY}px`;
+        });
+    </script>
+</body>
+</html>
